@@ -1,7 +1,7 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#define B(key) &{/behaviors/default/key}
+#define B_BASE(key) &{/behaviors/default/key}
 
 / {
     layers {
@@ -12,7 +12,7 @@
             &kp Y         &kp C         &kp L         &kp M         &kp K             &kp Z         &kp F         &kp U         &kp COMMA     &kp SQT    
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         //│  I          │  S          │  R          │  T          │  G          │   │  P          │  N          │  E          │  A          │  O          │
-            &ht LGUI I    &ht LALT S    &ht LCTRL R   B(T)          &kp G             &kp P         B(N)          &ht RCTRL E   &ht RALT A    &ht RGUI O
+            &ht LGUI I    &ht LALT S    &ht LCTRL R   B_BASE(T)     &kp G             &kp P         B_BASE(N)     &ht RCTRL E   &ht RALT A    &ht RGUI O
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         //│  Q          │  V          │  W          │  D          │  J          │   │  B          │  H          │  /\         │  .:         │  X          │
             &kp Q         &kp V         &kp W         &kp D         &kp J             &kp B         &kp H         &kp FSL   H   &kp DOT       &kp X      
