@@ -1,0 +1,45 @@
+// Copyright (c) 2022 The ZMK Contributors
+// SPDX-License-Identifier: MIT
+
+#define B(key) &{/behaviors/default/key}
+
+/ {
+    layers {
+        default_layer {
+            bindings = <
+        //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+        //│  Y          │  C          │  L          │  M          │  K          │   │  Z          │  F          │  U          │  ,;         │  '"         │
+            &kp Y         &kp C         &kp L         &kp M         &kp K             &kp Z         &kp F         &kp U         &kp COMMA     &kp SQT    
+        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+        //│  I          │  S          │  R          │  T          │  G          │   │  P          │  N          │  E          │  A          │  O          │
+            &ht LGUI I    &ht LALT S    &ht LCTRL R   B(T)          &kp G             &kp P         B(N)          &ht RCTRL E   &ht RALT A    &ht RGUI O
+        //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+        //│  Q          │  V          │  W          │  D          │  J          │   │  B          │  H          │  /\         │  .:         │  X          │
+            &kp Q         &kp V         &kp W         &kp D         &kp J             &kp B         &kp H         &kp FSL   H   &kp DOT       &kp X      
+        //╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                                      &kp SPACE     &kp ENTER         &kp BSPC      &kp SPACE   
+        //                                          ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+            >;
+        };
+    };
+
+    behaviors {
+	default {
+	    T {
+	        compatible = "zmk,behavior-tap-dance";
+	        label = "home_row_mods_0_left_shift";
+	        #binding-cells = <0>;
+	        tapping-term-ms = <200>;
+	        bindings = <&ht LSHFT T>, <&caps_word>;
+	    };
+
+	    N {
+	        compatible = "zmk,behavior-tap-dance";
+	        label = "home_row_mods_0_right_shift";
+	        #binding-cells = <0>;
+	        tapping-term-ms = <200>;
+	        bindings = <&ht RSHFT N>, <&caps_word>;
+	    };
+	};
+    };
+};
