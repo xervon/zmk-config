@@ -7,41 +7,81 @@
     keymap {
         base {
             bindings = <
-        // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-        // │  Y          │  C          │  L          │  M          │  K          │   │  Z          │  F          │  U          │  ,;         │  '"         │
-             &kp Y         &kp C         &kp L         &kp M         &kp K             &kp Z         &kp F         &kp U         &kp COMMA     &kp SQT
-        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        // │  I          │  S          │  R          │  T          │  G          │   │  P          │  N          │  E          │  A          │  O          │
-             &mt LGUI I    &mt LALT S    &mt LCTRL R   B_BASE(t)     &kp G             &kp P         B_BASE(n)     &mt RCTRL E   &mt RALT A    &mt RGUI O
-        // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-        // │  Q          │  V          │  W          │  D          │  J          │   │  B          │  H          │  /\         │  .:         │  X          │
-             &kp Q         &kp V         &kp W         &kp D         &kp J             &kp B         &kp H         &kp SLASH     &kp DOT       &kp X
-        // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                                       &kp SPACE     &kp ENTER         &kp BSPC      &kp SPACE
-        //                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+        // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+        // │  Y           │  C           │  L           │  M           │  K           │   │  Z           │  F           │  U           │  ,;          │  '"          │
+             &kp Y          &kp C          &kp L          &kp M          &kp K              &kp Z          &kp F          &kp U          B_BASE(comma)  &kp SQT    
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │  I           │  S           │  R           │  T           │  G           │   │  P           │  N           │  E           │  A           │  O           │
+             &mt LGUI I     &mt LALT S     &mt LCTRL R    B_BASE(t)      &kp G              &kp P          B_BASE(n)      &mt RCTRL E    &mt RALT A     &mt RGUI O 
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │  Q           │  V           │  W           │  D           │  J           │   │  B           │  H           │  /\          │  .:          │  X           │
+             &kp Q          &kp V          &kp W          &kp D          &kp J              &kp B          &kp H          B_BASE(slash)  B_BASE(dot)    &kp X      
+        // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
+                                                          B_BASE(l_spc)  &kp ENTER          &kp BSPC       B_BASE(r_spc)
+        //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
             >;
         };
     };
 
     behaviors {
-	layers {
-	    base {
-	        t {
-	            compatible = "zmk,behavior-tap-dance";
-	            label = "base_T";
-	            #binding-cells = <0>;
-	            tapping-term-ms = <200>;
-	            bindings = <&mt LSHFT T>, <&caps_word>;
-	        };
+        layers {
+            base {
+                t {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "base_T";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&mt LSHFT T>, <&caps_word>;
+                };
 
-	        n {
-	            compatible = "zmk,behavior-tap-dance";
-	            label = "base_N";
-	            #binding-cells = <0>;
-	            tapping-term-ms = <200>;
-	            bindings = <&mt RSHFT N>, <&caps_word>;
-	        };
-	    };
+                n {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "base_N";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&mt RSHFT N>, <&caps_word>;
+                };
+
+                dot {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "base_DOT";
+                    #binding-cells = <0>;
+                    bindings = <&kp DOT>, <&kp COLON>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                comma {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "base_COMMA";
+                    #binding-cells = <0>;
+                    bindings = <&kp COMMA>, <&kp SEMI>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                slash {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "base_SLASH";
+                    #binding-cells = <0>;
+                    bindings = <&kp SLASH>, <&kp BACKSLASH>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                l_spc {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "base_l_SPACE";
+                    #binding-cells = <0>;
+                    bindings = <&kp SPACE>, <&kp TAB>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                r_spc {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "base_r_SPACE";
+                    #binding-cells = <0>;
+                    bindings = <&kp SPACE>, <&kp DELETE>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+            };
         };
     };
 };
