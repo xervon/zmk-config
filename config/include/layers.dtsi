@@ -1,5 +1,7 @@
 #define B_LAYER(layer,key) &{/behaviors/layers/layer/key}
 
 #define L_BASE 0
+#define L_META 1
 
 #include "layers/base.dtsi"
+#include "layers/meta.dtsi"

@@ -12,4 +12,23 @@
     keymap {
         compatible = "zmk,keymap";
     };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_repeat_l {
+            timeout_ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&key_repeat>;
+        };
+        combo_repeat_r {
+            timeout_ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&key_repeat>;
+        };
+        combo_meta {
+            timeout_ms = <50>;
+            key-positions = <30 33>;
+            bindings = <&to L_META>;
+        };
+    };
 };
