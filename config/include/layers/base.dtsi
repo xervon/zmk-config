@@ -12,7 +12,7 @@
             &kp Y         &kp C         &kp L         &kp M         &kp K             &kp Z         &kp F         &kp U         &kp COMMA     &kp SQT    
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         //│  I          │  S          │  R          │  T          │  G          │   │  P          │  N          │  E          │  A          │  O          │
-            &mt LGUI I    &mt LALT S    &mt LCTRL R   B_BASE(T)     &kp G             &kp P         B_BASE(N)     &mt RCTRL E   &mt RALT A    &mt RGUI O
+            &mt LGUI I    &mt LALT S    &mt LCTRL R   &b_base_t     &kp G             &kp P         &b_base_n     &mt RCTRL E   &mt RALT A    &mt RGUI O
         //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
         //│  Q          │  V          │  W          │  D          │  J          │   │  B          │  H          │  /\         │  .:         │  X          │
             &kp Q         &kp V         &kp W         &kp D         &kp J             &kp B         &kp H         &kp FSL       &kp DOT       &kp X      
@@ -25,17 +25,17 @@
 
     behaviors {
 	base {
-	    T {
+	    b_base_t: T {
 	        compatible = "zmk,behavior-tap-dance";
-	        label = "home_row_mods_0_left_shift";
+	        label = "base_T";
 	        #binding-cells = <0>;
 	        tapping-term-ms = <200>;
 	        bindings = <&mt LSHFT T>, <&caps_word>;
 	    };
 
-	    N {
+	    b_base_n: N {
 	        compatible = "zmk,behavior-tap-dance";
-	        label = "home_row_mods_0_right_shift";
+	        label = "base_N";
 	        #binding-cells = <0>;
 	        tapping-term-ms = <200>;
 	        bindings = <&mt RSHFT N>, <&caps_word>;
