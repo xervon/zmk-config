@@ -12,6 +12,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-	&{/layers/default_layer} {};
+	&{/layers/base} {};
     };
 };
