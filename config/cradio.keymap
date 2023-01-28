@@ -12,6 +12,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-	&{/layers/base} {};
+        aliases {
+            base = &{/layers/base};
+        };
     };
 };
