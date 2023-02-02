@@ -1,0 +1,40 @@
+// Copyright (c) 2022 The ZMK Contributors
+// SPDX-License-Identifier: MIT
+
+#define B_NAV(key) B_LAYER(nav, key)
+
+/ {
+    keymap {
+        nav {
+            bindings = <
+        // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+        // │              │              │              │              │              │   │  keynav      │  HOME        │  PAGE DOWN   │  PAGE UP     │  END         │
+             &none          &none          &none          &none          &none              &kp LC(SEMI)   &kp HOME       &kp PG_DN      &kp PD_UP      &kp END
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │  GUI         │  ALT         │  CONTROL     │  SHIFT       │              │   │              │  LEFT        │  DOWN        │  UP          │  RIGHT       │
+             MT_SK(LGUI)    MT_SK(LALT)    MT_SK(LCTRL)   MT_SK(LSHFT)   &none              &none          &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │              │              │              │              │              │   │              │              │              │              │              │
+             &none          &none          &none          &none          &none              &none          &none          &none          &none          &none
+        // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
+                                                          B_BASE(l_spc)  &kp ENTER          &kp BSPC       B_BASE(r_spc)
+        //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
+            >;
+        };
+    };
+
+    combos {
+      tog_nav {
+        timeout-ms = <50>;
+        key-positions = <7 16 18>;
+        bindings = <&tog L_NAV>;
+      };
+    };
+
+    behaviors {
+        layers {
+            nav {
+            };
+        };
+    };
+};

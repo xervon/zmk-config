@@ -2,6 +2,8 @@
 
 #define L_BASE 0
 #define L_META 1
+#define L_NAV  2
 
 #include "layers/base.dtsi"
 #include "layers/meta.dtsi"
+#include "layers/nav.dtsi"
