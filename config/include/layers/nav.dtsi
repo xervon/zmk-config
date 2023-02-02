@@ -9,7 +9,7 @@
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
         // │              │              │              │              │              │   │  keynav      │  HOME        │  PAGE DOWN   │  PAGE UP     │  END         │
-             &none          &none          &none          &none          &none              &kp LC(SEMI)   &kp HOME       &kp PG_DN      &kp PD_UP      &kp END
+             &none          &none          &none          &none          &none              &kp LC(SEMI)   &kp HOME       &kp PG_DN      &kp PG_UP      &kp END
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │  GUI         │  ALT         │  CONTROL     │  SHIFT       │              │   │              │  LEFT        │  DOWN        │  UP          │  RIGHT       │
              MT_SK(LGUI)    MT_SK(LALT)    MT_SK(LCTRL)   MT_SK(LSHFT)   &none              &none          &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT
