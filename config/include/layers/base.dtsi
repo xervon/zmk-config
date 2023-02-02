@@ -31,7 +31,7 @@
                     label = "base_T";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&mt LSHFT T>, <&caps_word>;
+                    bindings = <&mt LSHFT T>, <B_BASE(hold_tap_caps_word) &none T>;
                 };
 
                 n {
@@ -39,7 +39,7 @@
                     label = "base_N";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&mt RSHFT N>, <&caps_word>;
+                    bindings = <&mt RSHFT N>, <B_BASE(hold_tap_caps_word) &none N>;
                 };
 
                 dot {
@@ -80,6 +80,15 @@
                     #binding-cells = <0>;
                     bindings = <&kp SPACE>, <&kp DELETE>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                hold_tap_caps_word {
+                  compatible = "zmk,behavior-hold-tap";
+                  label = "HOLD_TAP_CAPS_WORD";
+                  #binding-cells = <2>;
+                  flavor = "tap-preferred";
+                  tapping-term-ms = <200>;
+                  bindings = <&kp>, <&caps_word>;
                 };
             };
         };
