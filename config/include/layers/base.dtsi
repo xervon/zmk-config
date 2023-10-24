@@ -67,20 +67,20 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                l_spc {
-                    compatible = "zmk,behavior-tap-dance";
-                    label = "base_l_SPACE";
-                    #binding-cells = <0>;
-                    tapping-term-ms = <200>;
-                    bindings = <&lt L_BRACKET B_BASE(l_spc_kp)>, <&kp B_BASE(l_spc_kp)>;
-                };
-
                 l_spc_kp {
                     compatible = "zmk,behavior-mod-morph";
                     label = "base_l_SPACE_kp";
                     #binding-cells = <0>;
                     bindings = <&kp SPACE>, <&kp TAB>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                l_spc {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "base_l_SPACE";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&lt L_BRACKET B_BASE(l_spc_kp)>, <&kp B_BASE(l_spc_kp)>;
                 };
 
                 enter {
@@ -99,20 +99,20 @@
                     bindings = <&lt L_NUM BSPC>, <&kp BSPC>;
                 };
 
-                r_spc {
-                    compatible = "zmk,behavior-tap-dance";
-                    label = "base_r_SPACE";
-                    #binding-cells = <0>;
-                    tapping-term-ms = <200>;
-                    bindings = <&lt L_SYM B_BASE(r_spc_kp)>, <&kp B_BASE(r_spc_kp)>;
-                };
-
                 r_spc_kp {
                     compatible = "zmk,behavior-mod-morph";
                     label = "base_r_SPACE_kp";
                     #binding-cells = <0>;
                     bindings = <&kp SPACE>, <&kp DELETE>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                r_spc {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "base_r_SPACE";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&lt L_SYM B_BASE(r_spc_kp)>, <&kp B_BASE(r_spc_kp)>;
                 };
 
                 hold_tap_caps_word {
