@@ -75,12 +75,21 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
+                l_spc_lt {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "base_l_SPACE_lt";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    bindings = <&mo>, <B_BASE(l_spc_kp)>;
+                };
+
                 l_spc {
                     compatible = "zmk,behavior-tap-dance";
                     label = "base_l_SPACE";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&lt L_BRACKET B_BASE(l_spc_kp)>, <&kp B_BASE(l_spc_kp)>;
+                    bindings = <B_BASE(l_spc_lt) L_BRACKET &none>, <B_BASE(l_spc_kp)>;
                 };
 
                 enter {
@@ -107,12 +116,21 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
+                r_spc_lt {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "base_r_SPACE_lt";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    bindings = <&mo>, <B_BASE(r_spc_kp)>;
+                };
+
                 r_spc {
                     compatible = "zmk,behavior-tap-dance";
                     label = "base_r_SPACE";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&lt L_SYM B_BASE(r_spc_kp)>, <&kp B_BASE(r_spc_kp)>;
+                    bindings = <B_BASE(r_spc_lt) L_SYM &none>, <B_BASE(r_spc_kp)>;
                 };
 
                 hold_tap_caps_word {
