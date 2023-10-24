@@ -1,0 +1,72 @@
+// Copyright (c) 2022 The ZMK Contributors
+// SPDX-License-Identifier: MIT
+
+#define B_SYM(key) B_LAYER(sym, key)
+
+/ {
+    keymap {
+        sym {
+            bindings = <
+        // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+        // │              |  `~          |  /&          |  *^          |  -_          │   │              │              │              │              │              │
+             &none          &kp GRAVE      B_SYM(div)     B_SYM(mult)    &kp MINUS          &none          &none          &none          &none          &none
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │              |  @#          |  ?!          |  $%          |  +           │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
+             &none          B_SYM(at)      B_SYM(quest)   B_SYM(dllr)    &kp PLUS           &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │              |              |              |  =           |              │   │              │              │              │              │              │
+             &none          &none          &none          &kp EQUAL      &none              &none          &none          &none          &none          &none
+        // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
+        //                                              |              |              |   |              |              |
+                                                          &none          &none              &none          &trans
+        //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
+            >;
+        };
+    };
+
+    behaviors {
+        layers {
+            sym {
+                div {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "sym_DIV";
+                    #binding-cells = <0>;
+                    bindings = <&kp SLASH>, <&kp AMPERSAND>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                mult {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "sym_MULT";
+                    #binding-cells = <0>;
+                    bindings = <&kp ASTERISK>, <&kp CARET>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                at {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "sym_AT";
+                    #binding-cells = <0>;
+                    bindings = <&kp AT_SIGN>, <&kp POUND>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                quest {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "sym_QUEST";
+                    #binding-cells = <0>;
+                    bindings = <&kp QUESTION>, <&kp EXCLAMATION>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                dllr {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "sym_CURR";
+                    #binding-cells = <0>;
+                    bindings = <&kp DOLLAR>, <&kp PERCENT>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+            };
+        };
+    };
+};

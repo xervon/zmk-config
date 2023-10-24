@@ -1,24 +1,24 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#define B_META(key) B_LAYER(meta, key)
+#define B_BRACKET(key) B_LAYER(BRACKET, key)
 
 / {
     keymap {
-        meta {
+        bracket {
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-        // │  BOOT        │  BT 0        │  BT 1        │  BT 2        │              │   │              │              │              │              │  BOOT        │
-             &bootloader    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none              &none          &none          &none          &none          &bootloader
+        // │              │              │              │              │              │   │              |  {           |  \           |  }           |              │
+             &none          &none          &none          &none          &none              &none          &kp LBRC       &kp BSLH       &RBRC          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              │              │              │  BASE        │              │   │              │              │              │              │              │
-             &none          &none          &none          &to L_BASE     &none              &none          &none          &none          &none          &none
+        // │  GUI         │  ALT         │  CONTROL     │  SHIFT       │              │   │  <           │  (           |  |           |  )           |  >           │
+             MT_SK(LGUI)    MT_SK(LALT)    MT_SK(LCTRL)   MT_SK(LSHFT)   &none              &kp LT         &kp LPAR       &kp PIPE       &kp RPAR       &kp GT
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │  RESET       │              │              │              │              │   │              │              │              │              │  RESET       │
-             &reset         &none          &none          &none          &none              &none          &none          &none          &none          &reset
+        // │              │              │              │              │              │   │              |  [           |  /           |  ]           |              │
+             &none          &none          &none          &none          &none              &none          &kp LBKT       &kp FSLH       &kp RBKT       &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |              |              |   |              |              |
-                                                          &none          &none              &none          &none
+                                                          &trans         &none              &none          &none
         //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
             >;
         };
@@ -26,7 +26,7 @@
 
     behaviors {
         layers {
-            meta {
+            bracket {
             };
         };
     };

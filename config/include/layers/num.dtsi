@@ -1,24 +1,24 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#define B_META(key) B_LAYER(meta, key)
+#define B_NUM(key) B_LAYER(num, key)
 
 / {
     keymap {
-        meta {
+        num {
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-        // │  BOOT        │  BT 0        │  BT 1        │  BT 2        │              │   │              │              │              │              │  BOOT        │
-             &bootloader    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none              &none          &none          &none          &none          &bootloader
+        // │              |  7           |  8           |  9           |  -           │   │              │              │              │              │              │
+             &none          &kp KP_N7      &kp KP_N8      &kp KP_N9      &kp KP_MINUS       &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              │              │              │  BASE        │              │   │              │              │              │              │              │
-             &none          &none          &none          &to L_BASE     &none              &none          &none          &none          &none          &none
+        // │  /           |  4           |  5           |  6           |  *           │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
+             &kp KP_DIVIDE  &kp KP_N4      &kp KP_N5      &kp KP_N6      &kp KP_MULTIPLY    &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │  RESET       │              │              │              │              │   │              │              │              │              │  RESET       │
-             &reset         &none          &none          &none          &none              &none          &none          &none          &none          &reset
+        // │  .,          |  1           |  2           |  3           |  +           │   │              │              │              │              │              │
+             B_NUM(dot)     &kp KP_N1      &kp KP_N2      &kp KP_N3      &kp KP_PLUS        &none          &none          &none          &none          &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-        //                                              |              |              |   |              |              |
-                                                          &none          &none              &none          &none
+        //                                              |  0           |  =           |   |              |              |
+                                                          &kp KP_N0      &kp KP_EQUAL       &trans         &none
         //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
             >;
         };
@@ -26,7 +26,14 @@
 
     behaviors {
         layers {
-            meta {
+            num {
+                dot {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "num_DOT";
+                    #binding-cells = <0>;
+                    bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
             };
         };
     };

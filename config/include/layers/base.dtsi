@@ -17,7 +17,8 @@
         // │  Q           │  V           │  W           │  D           │  J           │   │  B           │  H           │  /\          │  .:          │  X           │
              &kp Q          &kp V          &kp W          &kp D          &kp J              &kp B          &kp H          B_BASE(slash)  B_BASE(dot)    &kp X      
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-                                                          B_BASE(l_spc)  &kp ENTER          &kp BSPC       B_BASE(r_spc)
+        //                                              |  SPACE       |  ENTER       |   |  BACKSPACE   |  SPACE       |
+                                                          B_BASE(l_spc)  B_BASE(enter)      B_BASE(bspc)   B_BASE(r_spc)
         //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
             >;
         };
@@ -67,16 +68,48 @@
                 };
 
                 l_spc {
-                    compatible = "zmk,behavior-mod-morph";
+                    compatible = "zmk,behavior-tap-dance";
                     label = "base_l_SPACE";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&lt L_BRACKET B_BASE(l_spc_kp)>, <&kp B_BASE(l_spc_kp)>;
+                };
+
+                l_spc_kp {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "base_l_SPACE_kp";
                     #binding-cells = <0>;
                     bindings = <&kp SPACE>, <&kp TAB>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
+                enter {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "base_ENTER";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&lt L_NAV ENTER>, <&kp ENTER>;
+                };
+
+                bspc {
+                    compatible = "zmk,behavior-tap-dance";
+                    label = "base_BSPC";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&lt L_NUM BSPC>, <&kp BSPC>;
+                };
+
                 r_spc {
-                    compatible = "zmk,behavior-mod-morph";
+                    compatible = "zmk,behavior-tap-dance";
                     label = "base_r_SPACE";
+                    #binding-cells = <0>;
+                    tapping-term-ms = <200>;
+                    bindings = <&lt L_SYM B_BASE(r_spc_kp)>, <&kp B_BASE(r_spc_kp)>;
+                };
+
+                r_spc_kp {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "base_r_SPACE_kp";
                     #binding-cells = <0>;
                     bindings = <&kp SPACE>, <&kp DELETE>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;

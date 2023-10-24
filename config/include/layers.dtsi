@@ -1,9 +1,17 @@
 #define B_LAYER(layer,key) &{/behaviors/layers/layer/key}
 
-#define L_BASE 0
-#define L_META 1
-#define L_NAV  2
+#define L_BASE    0
+#define L_NUM     1
+#define L_SYM     2
+#define L_NAV     3
+#define L_BRACKET 4
+
+#define L_META    5
 
 #include "layers/base.dtsi"
-#include "layers/meta.dtsi"
+#include "layers/num.dtsi"
+#include "layers/sym.dtsi"
 #include "layers/nav.dtsi"
+#include "layers/bracket.dtsi"
+
+#include "layers/meta.dtsi"

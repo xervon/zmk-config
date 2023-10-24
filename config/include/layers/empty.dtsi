@@ -1,21 +1,21 @@
 // Copyright (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
-#define B_META(key) B_LAYER(meta, key)
+#define B_LAYER(key) B_LAYER(layer, key)
 
 / {
     keymap {
-        meta {
+        layer {
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-        // │  BOOT        │  BT 0        │  BT 1        │  BT 2        │              │   │              │              │              │              │  BOOT        │
-             &bootloader    &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none              &none          &none          &none          &none          &bootloader
+        // │              │              │              │              │              │   │              │              │              │              │              │
+             &none          &none          &none          &none          &none              &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              │              │              │  BASE        │              │   │              │              │              │              │              │
-             &none          &none          &none          &to L_BASE     &none              &none          &none          &none          &none          &none
+        // │              │              │              │              │              │   │              │              │              │              │              │
+             &none          &none          &none          &none          &none              &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │  RESET       │              │              │              │              │   │              │              │              │              │  RESET       │
-             &reset         &none          &none          &none          &none              &none          &none          &none          &none          &reset
+        // │              │              │              │              │              │   │              │              │              │              │              │
+             &none          &none          &none          &none          &none              &none          &none          &none          &none          &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |              |              |   |              |              |
                                                           &none          &none              &none          &none
@@ -26,7 +26,7 @@
 
     behaviors {
         layers {
-            meta {
+            layer {
             };
         };
     };
