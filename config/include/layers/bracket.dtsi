@@ -9,7 +9,7 @@
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
         // │              │              │              │              │              │   │              |  {           |  \           |  }           |              │
-             &none          &none          &none          &none          &none              &none          &kp LBRC       &kp BSLH       &RBRC          &none
+             &none          &none          &none          &none          &none              &none          &kp LBRC       &kp BSLH       &kp RBRC       &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │  GUI         │  ALT         │  CONTROL     │  SHIFT       │              │   │  <           │  (           |  |           |  )           |  >           │
              MT_SK(LGUI)    MT_SK(LALT)    MT_SK(LCTRL)   MT_SK(LSHFT)   &none              &kp LT         &kp LPAR       &kp PIPE       &kp RPAR       &kp GT
