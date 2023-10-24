@@ -6,6 +6,11 @@
     global-quick-tap;
 };
 
+&lt {
+    quick-tap-ms = <150>;
+    global-quick-tap;
+};
+
 / {
   behaviors {
     mt_sk: mod_tap_sticky_key {
