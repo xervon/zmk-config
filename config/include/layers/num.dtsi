@@ -9,16 +9,16 @@
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
         // │              |  7           |  8           |  9           |  +-          │   │              │              │              │              │              │
-             &none          B_NUM(N7)      B_NUM(N8)      B_NUM(N9)      B_NUM(point)       &none          &none          &none          &none          &none
+             &none          B_NUM(seven)   B_NUM(eight)   B_NUM(nine)    B_NUM(point)       &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │              |  4           |  5           |  6           |  */          │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
-             &none          B_NUM(N4)      B_NUM(N5)      B_NUM(N6)      B_NUM(line)        &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
+             &none          B_NUM(four)    B_NUM(five)    B_NUM(six)     B_NUM(line)        &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │  .,          |  1           |  2           |  3           |  +           │   │              │              │              │              │              │
-             B_NUM(dot)     B_NUM(N1)      B_NUM(N2)      B_NUM(N3)      B_NUM(equal)       &none          &none          &none          &none          &none
+             B_NUM(dot)     B_NUM(one)     B_NUM(two)     B_NUM(three)   B_NUM(equal)       &none          &none          &none          &none          &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |  SPACE       |  0           |   |              |              |
-                                                          &kp SPACE      B_NUM(N0)          &trans         &none
+                                                          &kp SPACE      B_NUM(zero)        &trans         &none
         //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
             >;
         };
@@ -27,7 +27,7 @@
     behaviors {
         layers {
             num {
-                N0 {
+                zero {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N0";
                     #binding-cells = <0>;
@@ -35,7 +35,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N1 {
+                one {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N1";
                     #binding-cells = <0>;
@@ -43,7 +43,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N2 {
+                two {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N2";
                     #binding-cells = <0>;
@@ -51,7 +51,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N3 {
+                three {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N3";
                     #binding-cells = <0>;
@@ -59,7 +59,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N4 {
+                four {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N4";
                     #binding-cells = <0>;
@@ -67,7 +67,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N5 {
+                five {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N5";
                     #binding-cells = <0>;
@@ -75,7 +75,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N6 {
+                six {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N6";
                     #binding-cells = <0>;
@@ -83,7 +83,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N7 {
+                seven {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N7";
                     #binding-cells = <0>;
@@ -91,7 +91,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N8 {
+                eight {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N8";
                     #binding-cells = <0>;
@@ -99,7 +99,7 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                N9 {
+                nine {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_N9";
                     #binding-cells = <0>;
