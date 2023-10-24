@@ -4,8 +4,8 @@
 #define B_BASE(key) B_LAYER(base, key)
 
 #define BASE_L_SPC B_BASE(l_spc_lt) L_BRACKET 0
-#define BASE_ENTER &lt              L_NAV     ENTER
-#define BASE_BSPC  &lt              L_NUM     BSPC
+#define BASE_ENTER B_BASE(thumb_lt) L_NAV     ENTER
+#define BASE_BSPC  B_BASE(thumb_lt) L_NUM     BSPC
 #define BASE_R_SPC B_BASE(r_spc_lt) L_SYM     0
 
 / {
@@ -86,7 +86,7 @@
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
-                    quick-tap-ms = <150>;
+                    quick-tap-ms = <200>;
                     global-quick-tap;
                     bindings = <&mo>, <B_BASE(l_spc)>;
                 };
@@ -105,9 +105,20 @@
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
-                    quick-tap-ms = <150>;
+                    quick-tap-ms = <200>;
                     global-quick-tap;
                     bindings = <&mo>, <B_BASE(r_spc)>;
+                };
+
+                thumb_lt {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "base_thumb_lt";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    quick-tap-ms = <200>;
+                    global-quick-tap;
+                    bindings = <&mo>, <&kp>;
                 };
 
                 hold_tap_caps_word {
