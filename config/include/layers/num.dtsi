@@ -8,10 +8,10 @@
         num {
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-        // │              |  7           |  8           |  9           |  +-          │   │              │              │              │              │              │
+        // │              |  7           |  8           |  9           |  /*          │   │              │              │              │              │              │
              &none          B_NUM(seven)   B_NUM(eight)   B_NUM(nine)    B_NUM(point)       &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              |  4           |  5           |  6           |  */          │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
+        // │              |  4           |  5           |  6           |  -+          │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
              &none          B_NUM(four)    B_NUM(five)    B_NUM(six)     B_NUM(line)        &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │  .,          |  1           |  2           |  3           |  =           │   │              │              │              │              │              │
@@ -111,7 +111,7 @@
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_POINT";
                     #binding-cells = <0>;
-                    bindings = <&kp ASTERISK>, <&kp SLASH>;
+                    bindings = <&kp SLASH>, <&kp ASTERISK>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
@@ -119,7 +119,7 @@
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_LINE";
                     #binding-cells = <0>;
-                    bindings = <&kp PLUS>, <&kp MINUS>;
+                    bindings = <&kp MINUS>, <&kp PLUS>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
