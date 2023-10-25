@@ -18,26 +18,31 @@
         combo_repeat_l_rm {
             timeout-ms = <50>;
             key-positions = <11 12>;
+	    layers = <L_BASE>;
             bindings = <&key_repeat>;
         };
         combo_repeat_l_mi {
             timeout-ms = <50>;
             key-positions = <12 13>;
+	    layers = <L_BASE>;
             bindings = <&kp ESCAPE>;
         };
         combo_repeat_r_mi {
             timeout-ms = <50>;
             key-positions = <16 17>;
+	    layers = <L_BASE>;
             bindings = <&kp ESCAPE>;
         };
         combo_repeat_r_rm {
             timeout-ms = <50>;
             key-positions = <17 18>;
+	    layers = <L_BASE>;
             bindings = <&key_repeat>;
         };
         combo_meta {
             timeout-ms = <50>;
             key-positions = <30 33>;
+	    layers = <L_BASE>;
             bindings = <&to L_META>;
         };
     };
