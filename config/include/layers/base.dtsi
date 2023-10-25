@@ -87,7 +87,6 @@
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     quick-tap-ms = <200>;
-                    global-quick-tap;
                     bindings = <&mo>, <B_BASE(l_spc)>;
                 };
 
@@ -106,7 +105,6 @@
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     quick-tap-ms = <200>;
-                    global-quick-tap;
                     bindings = <&mo>, <B_BASE(r_spc)>;
                 };
 
@@ -117,7 +115,6 @@
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     quick-tap-ms = <200>;
-                    global-quick-tap;
                     bindings = <&mo>, <&kp>;
                 };
 
