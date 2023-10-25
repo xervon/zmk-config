@@ -107,14 +107,6 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                line {
-                    compatible = "zmk,behavior-mod-morph";
-                    label = "num_POINT";
-                    #binding-cells = <0>;
-                    bindings = <&kp PLUS>, <&kp MINUS>;
-                    mods = <(MOD_LSFT|MOD_RSFT)>;
-                };
-
                 point {
                     compatible = "zmk,behavior-mod-morph";
                     label = "num_POINT";
@@ -123,9 +115,17 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
+                line {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "num_LINE";
+                    #binding-cells = <0>;
+                    bindings = <&kp PLUS>, <&kp MINUS>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
                 equal {
                     compatible = "zmk,behavior-mod-morph";
-                    label = "num_POINT";
+                    label = "num_EQUAL";
                     #binding-cells = <0>;
                     bindings = <&kp EQUAL>, <&none>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
