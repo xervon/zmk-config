@@ -3,10 +3,10 @@
 
 #define B_BASE(key) B_LAYER(base, key)
 
-#define BASE_L_SPC B_BASE(l_spc_lt) L_BRACKET 0
-#define BASE_ENTER B_BASE(thumb_lt) L_NAV     ENTER
-#define BASE_BSPC  B_BASE(thumb_lt) L_NUM     BSPC
-#define BASE_R_SPC B_BASE(r_spc_lt) L_SYM     0
+#define BASE_REP   B_BASE(repeat_lt) L_BRACKET 0
+#define BASE_ENTER B_BASE(thumb_lt)  L_NAV     ENTER
+#define BASE_BSPC  B_BASE(thumb_lt)  L_NUM     BSPC
+#define BASE_SPC   B_BASE(spc_lt)    L_SYM     0
 
 / {
     keymap {
@@ -23,7 +23,7 @@
              &kp Q          &kp V          &kp W          B_BASE(d)      &kp J              &kp B          B_BASE(h)      B_BASE(slash)  B_BASE(dot)    &kp X      
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |  SPACE       |  ENTER       |   |  BACKSPACE   |  SPACE       |
-                                                          BASE_L_SPC     BASE_ENTER         BASE_BSPC      BASE_R_SPC
+                                                          BASE_REP       BASE_ENTER         BASE_BSPC      BASE_SPC
         //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
             >;
         };
@@ -72,40 +72,40 @@
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                l_spc {
+                repeat {
                     compatible = "zmk,behavior-mod-morph";
-                    label = "base_l_SPACE";
+                    label = "base_REPEAT";
                     #binding-cells = <0>;
-                    bindings = <&kp SPACE>, <&kp TAB>;
+                    bindings = <&key_repeat>, <&kp TAB>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                l_spc_lt {
+                repeat_lt {
                     compatible = "zmk,behavior-hold-tap";
-                    label = "base_l_SPACE_lt";
+                    label = "base_REPEAT_lt";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     quick-tap-ms = <200>;
-                    bindings = <&mo>, <B_BASE(l_spc)>;
+                    bindings = <&mo>, <B_BASE(repeat)>;
                 };
 
-                r_spc {
+                spc {
                     compatible = "zmk,behavior-mod-morph";
-                    label = "base_r_SPACE";
+                    label = "base_SPACE";
                     #binding-cells = <0>;
                     bindings = <&kp SPACE>, <&kp DELETE>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
-                r_spc_lt {
+                spc_lt {
                     compatible = "zmk,behavior-hold-tap";
-                    label = "base_r_SPACE_lt";
+                    label = "base_SPACE_lt";
                     #binding-cells = <2>;
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     quick-tap-ms = <200>;
-                    bindings = <&mo>, <B_BASE(r_spc)>;
+                    bindings = <&mo>, <B_BASE(spc)>;
                 };
 
                 thumb_lt {
