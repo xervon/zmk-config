@@ -17,10 +17,10 @@
              &kp Y          &kp C          &kp L          &kp M          &kp K              &kp Z          &kp F          &kp U          B_BASE(comma)  &kp SQT    
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │  I           │  S           │  R           │  T           │  G           │   │  P           │  N           │  E           │  A           │  O           │
-             &mt LGUI I     &mt LALT S     &mt LCTRL R    B_BASE(t)      &kp G              &kp P          B_BASE(n)      &mt RCTRL E    &mt RALT A     &mt RGUI O 
+             &mt LGUI I     &mt LALT S     &mt LCTRL R    &mt LSHFT T    &kp G              &kp P          &mt RSHFT N    &mt RCTRL E    &mt RALT A     &mt RGUI O 
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │  Q           │  V           │  W           │  D           │  J           │   │  B           │  H           │  /\          │  .:          │  X           │
-             &kp Q          &kp V          &kp W          &kp D          &kp J              &kp B          &kp H          B_BASE(slash)  B_BASE(dot)    &kp X      
+             &kp Q          &kp V          &kp W          B_BASE(d)      &kp J              &kp B          B_BASE(h)      B_BASE(slash)  B_BASE(dot)    &kp X      
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |  SPACE       |  ENTER       |   |  BACKSPACE   |  SPACE       |
                                                           BASE_L_SPC     BASE_ENTER         BASE_BSPC      BASE_R_SPC
@@ -32,20 +32,20 @@
     behaviors {
         layers {
             base {
-                t {
+                d {
                     compatible = "zmk,behavior-tap-dance";
-                    label = "base_T";
+                    label = "base_D";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&mt LSHFT T>, <&caps_word>;
+                    bindings = <&kp D>, <&caps_word>;
                 };
 
-                n {
+                h {
                     compatible = "zmk,behavior-tap-dance";
-                    label = "base_N";
+                    label = "base_H";
                     #binding-cells = <0>;
                     tapping-term-ms = <200>;
-                    bindings = <&mt RSHFT N>, <&caps_word>;
+                    bindings = <&kp H>, <&caps_word>;
                 };
 
                 dot {
