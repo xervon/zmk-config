@@ -9,10 +9,10 @@
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
         // │              |  `~          |  &           |  ^           |  _           │   │              │              │              │              │              │
-             &none          &kp GRAVE      &kp AMPERSAND  &kp CARET      &kp UNDER          &none          &none          &none          &none          &none
+             &none          B_SYM(grave)   &kp AMPERSAND  &kp CARET      &kp UNDER          &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │              |  @           |  ?           |  $           |  -           │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
-             &none          &kp AT_SIGN    &kp QMARK      &kp DOLLAR     B_SYM(minus)       &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
+             &kp TILDE      &kp AT_SIGN    &kp QMARK      &kp DOLLAR     B_SYM(minus)       &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │              |  #           |  !           |  %           |  =           │   │              │              │              │              │              │
              &none          &kp POUND      &kp EXCL       &kp PERCENT    &kp EQUAL          &none          &none          &none          &none          &none
@@ -27,6 +27,14 @@
     behaviors {
         layers {
             sym {
+                grave {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "sym_GRAVE";
+                    #binding-cells = <0>;
+                    bindings = <&kp GRAVE>, <&none>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
                 minus {
                     compatible = "zmk,behavior-mod-morph";
                     label = "sym_MINUS";
