@@ -8,14 +8,14 @@
         sym {
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-        // │              |  `~          |  &           |  ^           |  _           │   │              │              │              │              │              │
-             &none          B_SYM(grave)   &kp AMPERSAND  &kp CARET      &kp UNDER          &none          &none          &none          &none          &none
+        // │              |  &           |  ?           |  ^           |  _           │   │              │              │              │              │              │
+             &none          &kp AMPERSAND  &kp QMARK      &kp CARET      &kp UNDER          &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              |  @           |  ?           |  $           |  -           │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
-             &kp TILDE      &kp AT_SIGN    &kp QMARK      &kp DOLLAR     B_SYM(minus)       &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
+        // │  `           |  #           |  ~           |  $           |  -           │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
+             B_SYM(grave)   &kp POUND      &kp TILDE      &kp DOLLAR     B_SYM(minus)       &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              |  #           |  !           |  %           |  =           │   │              │              │              │              │              │
-             &none          &kp POUND      &kp EXCL       &kp PERCENT    &kp EQUAL          &none          &none          &none          &none          &none
+        // │              |  @           |  !           |  %           |  =           │   │              │              │              │              │              │
+             &none          &kp AT_SIGN    &kp EXCL       &kp PERCENT    &kp EQUAL          &none          &none          &none          &none          &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |              |              |   |              |              |
                                                           &none          &none              &none          &trans
