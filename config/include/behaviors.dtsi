@@ -1,2 +1,1 @@
-#include "behaviors/caps-word.dtsi"
 #include "behaviors/mod-tap.dtsi"
