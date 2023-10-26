@@ -20,7 +20,7 @@
              &mt LGUI I     &mt LALT S     &mt LCTRL R    &mt LSHFT T    &kp G              &kp P          &mt RSHFT N    &mt RCTRL E    &mt RALT A     &mt RGUI O 
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
         // │  Q           │  V           │  W           │  D           │  J           │   │  B           │  H           │  /\          │  .:          │  X           │
-             &kp Q          &kp V          &kp W          B_BASE(d)      &kp J              &kp B          B_BASE(h)      B_BASE(slash)  B_BASE(dot)    &kp X      
+             &kp Q          &kp V          &kp W          &kp D          &kp J              &kp B          &kp H          B_BASE(slash)  B_BASE(dot)    &kp X
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |  SPACE       |  ENTER       |   |  BACKSPACE   |  SPACE       |
                                                           BASE_REP       BASE_ENTER         BASE_BSPC      BASE_SPC
@@ -53,22 +53,6 @@
     behaviors {
         layers {
             base {
-                d {
-                    compatible = "zmk,behavior-tap-dance";
-                    label = "base_D";
-                    #binding-cells = <0>;
-                    tapping-term-ms = <200>;
-                    bindings = <&kp D>, <&caps_word>;
-                };
-
-                h {
-                    compatible = "zmk,behavior-tap-dance";
-                    label = "base_H";
-                    #binding-cells = <0>;
-                    tapping-term-ms = <200>;
-                    bindings = <&kp H>, <&caps_word>;
-                };
-
                 dot {
                     compatible = "zmk,behavior-mod-morph";
                     label = "base_DOT";
