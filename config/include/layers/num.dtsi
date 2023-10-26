@@ -8,16 +8,16 @@
         num {
             bindings = <
         // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-        // │              |  7           |  8           |  9           |  /*          │   │              │              │              │              │              │
-             &none          B_NUM(seven)   B_NUM(eight)   B_NUM(nine)    B_NUM(point)       &none          &none          &none          &none          &none
+        // │  F12         |  7 / F7      |  8 / F8      |  9 / F9      |  /*          │   │              │              │              │              │              │
+             B_NUM(twelve)  B_NUM(seven)   B_NUM(eight)   B_NUM(nine)    B_NUM(point)       &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              |  4           |  5           |  6           |  -+          │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
-             &none          B_NUM(four)    B_NUM(five)    B_NUM(six)     B_NUM(line)        &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
+        // │  F11         |  4 / F4      |  5 / F5      |  6 / F6      |  -+          │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
+             B_NUM(eleven)  B_NUM(four)    B_NUM(five)    B_NUM(six)     B_NUM(line)        &none          MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │  .,          |  1           |  2           |  3           |  =           │   │              │              │              │              │              │
+        // │  .,          |  1 / F1      |  2 / F2      |  3 / F3      |  =           │   │              │              │              │              │              │
              B_NUM(dot)     B_NUM(one)     B_NUM(two)     B_NUM(three)   B_NUM(equal)       &none          &none          &none          &none          &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
-        //                                              |  SPACE       |  0           |   |              |              |
+        //                                              |  SPACE       |  0 / F10     |   |              |              |
                                                           &kp SPACE      B_NUM(zero)        &trans         &none
         //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
             >;
@@ -104,6 +104,22 @@
                     label = "num_N9";
                     #binding-cells = <0>;
                     bindings = <&kp N9>, <&kp F9>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                eleven {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "num_F11";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp F11>;
+                    mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                twelve {
+                    compatible = "zmk,behavior-mod-morph";
+                    label = "num_F12";
+                    #binding-cells = <0>;
+                    bindings = <&none>, <&kp F12>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
 
