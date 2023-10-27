@@ -11,11 +11,11 @@
         // │              │              │              │              │              │   │              |  {           |  \           |  }           |              │
              &none          &none          &none          &none          &none              &none          &kp LBRC       &kp BSLH       &kp RBRC       &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │  GUI         │  ALT         │  CONTROL     │  SHIFT       │              │   │  <           │  (           |  |           |  )           |  >           │
-             MT_SK(LGUI)    MT_SK(LALT)    MT_SK(LCTRL)   MT_SK(LSHFT)   &caps_word         &kp LT         &kp LPAR       &kp PIPE       &kp RPAR       &kp GT
+        // │              │  ALT         │  SHIFT       │  CONTROL     │              │   │  <           │  (           |  |           |  )           |  >           │
+             &none          MT_SK(LALT)    MT_SK(LSHFT)   MT_SK(LCTRL)   &caps_word         &kp LT         &kp LPAR       &kp PIPE       &kp RPAR       &kp GT
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              │              │              │              │              │   │              |  [           |  /           |  ]           |              │
-             &none          &none          &none          &none          &none              &none          &kp LBKT       &kp FSLH       &kp RBKT       &none
+        // │  GUI         │              │              │              │              │   │              |  [           |  /           |  ]           |              │
+             MT_SK(LGUI)    &none          &none          &none          &none              &none          &kp LBKT       &kp FSLH       &kp RBKT       &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |              |              |   |              |              |
                                                           &trans         &none              &none          &none
