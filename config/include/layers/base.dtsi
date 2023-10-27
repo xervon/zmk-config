@@ -34,13 +34,13 @@
             timeout-ms = <50>;
             key-positions = <12 13>;
             layers = <L_BASE>;
-            bindings = <&kp ESCAPE>;
+            bindings = <&mt LS(LCTRL) ESCAPE>;
         };
         combo_r_mi {
             timeout-ms = <50>;
             key-positions = <16 17>;
             layers = <L_BASE>;
-            bindings = <&kp ESCAPE>;
+            bindings = <&mt RS(RCTRL) ESCAPE>;
         };
         combo_meta {
             timeout-ms = <50>;
