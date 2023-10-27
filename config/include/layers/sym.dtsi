@@ -11,11 +11,11 @@
         // │              |  ^           |  !           |  &           |  _           │   │              │              │              │              │              │
              &none          &kp CARET      &kp EXCL       &kp AMPERSAND  &kp UNDER          &none          &none          &none          &none          &none
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │  `           |  #           |  ~           |  $           |  -           │   │              │  CONTROL     │  SHIFT       |  ALT         |              │
-             B_SYM(grave)   &kp POUND      &kp TILDE      &kp DOLLAR     B_SYM(minus)       &caps_word     MT_SK(RCTRL)   MT_SK(RSHFT)   MT_SK(RALT)    &none
+        // │  `           |  #           |  ~           |  $           |  -           │   │              │  SHIFT       │  CONTROL     |  ALT         |  GUI         │
+             B_SYM(grave)   &kp POUND      &kp TILDE      &kp DOLLAR     B_SYM(minus)       &caps_word     MT_SK(RSHFT)   MT_SK(RCTRL)   MT_SK(RALT)    MT_SK(RGUI)
         // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        // │              |  %           |  ?           |  @           |  =           │   │              │              │              │              │  GUI         │
-             &none          &kp PERCENT    &kp QMARK      &kp AT_SIGN    &kp EQUAL          &none          &none          &none          &none          MT_SK(RGUI)
+        // │              |  %           |  ?           |  @           |  =           │   │              │              │              │              │              │
+             &none          &kp PERCENT    &kp QMARK      &kp AT_SIGN    &kp EQUAL          &none          &none          &none          &none          &none
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
         //                                              |              |              |   |              |              |
                                                           &none          &none              &none          &trans
