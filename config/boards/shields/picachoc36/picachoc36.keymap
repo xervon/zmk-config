@@ -4,10 +4,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#include "include/behaviors.dtsi"
-#include "include/layers.dtsi"
-
-#define KEY_34 1
+#include "../../../include/behaviors.dtsi"
+#include "../../../include/layers.dtsi"
 
 / {
     keymap {

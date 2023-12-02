@@ -1,0 +1,16 @@
+if SHIELD_PICACHOC36_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Picachoc 36"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_PICACHOC36_LEFT || SHIELD_PICACHOC36_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif

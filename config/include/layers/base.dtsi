@@ -6,7 +6,7 @@
 #define BASE_REP   B_BASE(repeat_lt) L_BRACKET 0
 #define BASE_ENTER B_BASE(thumb_lt)  L_NAV     ENTER
 #define BASE_BSPC  B_BASE(thumb_lt)  L_NUM     BSPC
-#define BASE_SPC   B_BASE(spc_lt)    L_SYM     0
+#define BASE_SPC   B_BASE(spc_lt)    L_SYM     SPACE
 
 / {
     keymap {
@@ -22,9 +22,17 @@
         // │  Q           │  V           │  W           │  D           │  J           │   │  B           │  H           │  /\          │  .:          │  X           │
              &kp Q          &kp V          &kp W          &kp D          &kp J              &kp B          &kp H          B_BASE(slash)  B_BASE(dot)    &kp X
         // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
+#ifdef KEY_34
+        //                                              ╭──────────────┬──────────────╮   ╭──────────────┬──────────────╮
         //                                              |  SPACE       |  ENTER       |   |  BACKSPACE   |  SPACE       |
                                                           BASE_REP       BASE_ENTER         BASE_BSPC      BASE_SPC
         //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
+#else
+        //                               ╭──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────╮
+        //                               |  SPACE       |  SPACE       |  ENTER       |   |  BACKSPACE   |  SPACE       |  SPACE       |
+                                           &kp TAB        BASE_REP       BASE_ENTER         BASE_BSPC      BASE_SPC       &kp DELETE
+        //                               ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
+#endif
             >;
         };
     };
@@ -42,12 +50,27 @@
             layers = <L_BASE>;
             bindings = <&mt RS(RCTRL) ESCAPE>;
         };
+#ifdef KEY_34
         combo_meta {
             timeout-ms = <50>;
             key-positions = <30 33>;
             layers = <L_BASE>;
             bindings = <&to L_META>;
         };
+#else
+        combo_meta {
+            timeout-ms = <50>;
+            key-positions = <30 35>;
+            layers = <L_BASE>;
+            bindings = <&to L_META>;
+        };
+        combo_meta_left {
+            timeout-ms = <50>;
+            key-positions = <30 32>;
+            layers = <L_BASE>;
+            bindings = <&to L_META>;
+        };
+#endif
     };
 
     behaviors {
@@ -92,7 +115,11 @@
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     quick-tap-ms = <200>;
+#ifdef KEY_34
                     bindings = <&mo>, <B_BASE(repeat)>;
+#else
+                    bindings = <&mo>, <&key_repeat>;
+#endif
                 };
 
                 spc {
@@ -110,7 +137,11 @@
                     flavor = "tap-preferred";
                     tapping-term-ms = <200>;
                     quick-tap-ms = <200>;
+#ifdef KEY_34
                     bindings = <&mo>, <B_BASE(spc)>;
+#else
+                    bindings = <&mo>, <&kp>;
+#endif
                 };
 
                 thumb_lt {

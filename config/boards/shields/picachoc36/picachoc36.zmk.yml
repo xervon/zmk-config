@@ -1,0 +1,11 @@
+file_format: "1"
+id: picachoc36
+name: Picachoc 36
+type: shield
+url: https://github.com/zzeneg/picachoc36
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - picachoc36_left
+  - picachoc36_right
