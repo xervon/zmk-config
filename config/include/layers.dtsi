@@ -5,13 +5,15 @@
 #define L_SYM     2
 #define L_NAV     3
 #define L_BRACKET 4
+#define L_MOUSE   5
 
-#define L_META    5
+#define L_META    6
 
 #include "layers/base.dtsi"
 #include "layers/num.dtsi"
 #include "layers/sym.dtsi"
 #include "layers/nav.dtsi"
 #include "layers/bracket.dtsi"
+#include "layers/mouse.dtsi"
 
 #include "layers/meta.dtsi"

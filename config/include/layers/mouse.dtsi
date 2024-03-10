@@ -1,0 +1,57 @@
+// Copyright (c) 2022 The ZMK Contributors
+// SPDX-License-Identifier: MIT
+
+#include <dt-bindings/zmk/mouse.h>
+
+#define B_MOUSE(key) B_LAYER(mouse, key)
+
+#define SCROLL_DOWN &msc SCRL_DOWN
+#define SCROLL_UP   &msc SCRL_UP
+
+/ {
+    keymap {
+        mouse {
+            bindings = <
+        // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+        // │              │              │              │              │              │   │              │              │              │              │              │
+             &none          &none          &none          &none          &none              &none          &none          &none          &none          &none
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │  GUI         │  ALT         │  CONTROL     │  SHIFT       │              │   │  keynav      │  LEFT        │  DOWN        │  UP          │  RIGHT       │
+             MT_SK(LGUI)    MT_SK(LALT)    MT_SK(LCTRL)   MT_SK(LSHFT)   &caps_word         &mmv LC(SEMI)  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP   &mmv MOVE_RIGHT
+        // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        // │              │              │              │              │              │   │              │              │              │              │              │
+             &none          &none          &none          &none          &none              &none          &none          SCROLL_DOWN    SCROLL_UP      &none
+        // ╰──────────────┴──────────────┴──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┴──────────────┴──────────────╯
+#ifdef KEY_34
+        //                                              ╭──────────────┬──────────────╮   ╭──────────────┬──────────────╮
+        //                                              |              |              |   |              |              |
+                                                          &none          &none              &none          &none
+        //                                              ╰──────────────┴──────────────╯   ╰──────────────┴──────────────╯
+#else
+        //                               ╭──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────╮
+        //                               |              |              |              |   |              |              |              |
+                                           &trans         &none          &none              &mkp MB1       &mkp MB3       &mkp MB2
+        //                               ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
+#endif
+            >;
+        };
+    };
+
+    combos {
+#ifdef KEY_34
+      middle_mouse {
+        timeout-ms = <50>;
+        key-positions = <7 16 18>;
+	layers = <L_MOUSE>;
+        bindings = <&kp MB1>;
+      };
+#endif
+    };
+
+    behaviors {
+        layers {
+            mouse {
+            };
+        };
+    };
+};

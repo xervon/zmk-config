@@ -3,6 +3,7 @@
 
 #define B_BASE(key) B_LAYER(base, key)
 
+#define BASE_TAB   B_BASE(tab_lt)    L_MOUSE   TAB
 #define BASE_REP   B_BASE(repeat_lt) L_BRACKET 0
 #define BASE_ENTER B_BASE(thumb_lt)  L_NAV     ENTER
 #define BASE_BSPC  B_BASE(thumb_lt)  L_NUM     BSPC
@@ -30,7 +31,7 @@
 #else
         //                               ╭──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────╮
         //                               |  SPACE       |  SPACE       |  ENTER       |   |  BACKSPACE   |  SPACE       |  SPACE       |
-                                           &kp TAB        BASE_REP       BASE_ENTER         BASE_BSPC      BASE_SPC       &kp DELETE
+                                           BASE_TAB       BASE_REP       BASE_ENTER         BASE_BSPC      BASE_SPC       &kp DELETE
         //                               ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
 #endif
             >;
@@ -51,6 +52,12 @@
             bindings = <&mt RS(RCTRL) ESCAPE>;
         };
 #ifdef KEY_34
+        combo_meta {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            layers = <L_BASE L_MOUSE>;
+            bindings = <&mo L_MOUSE>;
+        };
         combo_meta {
             timeout-ms = <50>;
             key-positions = <30 33>;
@@ -98,6 +105,16 @@
                     #binding-cells = <0>;
                     bindings = <&kp SLASH>, <&kp BACKSLASH>;
                     mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+
+                tab_lt {
+                    compatible = "zmk,behavior-hold-tap";
+                    label = "base_TAB_lt";
+                    #binding-cells = <2>;
+                    flavor = "tap-preferred";
+                    tapping-term-ms = <200>;
+                    quick-tap-ms = <200>;
+                    bindings = <&mo>, <&kp>;
                 };
 
                 repeat {
