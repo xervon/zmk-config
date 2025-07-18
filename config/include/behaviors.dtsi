@@ -1,1 +1,2 @@
 #include "behaviors/mod-tap.dtsi"
+#include "behaviors/sticky.dtsi"
