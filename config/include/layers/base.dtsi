@@ -52,7 +52,7 @@
             bindings = <&mt RS(RCTRL) ESCAPE>;
         };
 #ifdef KEY_34
-        combo_meta {
+        combo_mouse {
             timeout-ms = <50>;
             key-positions = <30 31>;
             layers = <L_BASE L_MOUSE>;
